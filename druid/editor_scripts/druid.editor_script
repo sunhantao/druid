@@ -108,7 +108,7 @@ function M.get_commands()
 					{
 						action = "shell",
 						command = {
-							"D:/tool/git/bin/bash",
+							"bash",
 							"./build/run_python_script_on_gui.sh",
 							"./build/create_druid_component.py",
 							"." .. editor.get(file, "path")
