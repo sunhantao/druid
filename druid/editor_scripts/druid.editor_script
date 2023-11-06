@@ -104,11 +104,14 @@ function M.get_commands()
 			run = function(opts)
 				local file = opts.selection
 				print("Run script for", editor.get(file, "path"))
+				save_file_from_dependency('/druid/editor_scripts/run_python_script_on_gui.sh', "./build/run_python_script_on_gui.sh")
+				save_file_from_dependency('/druid/editor_scripts/create_druid_component.py', "./build/create_druid_component.py")
+				save_file_from_dependency('/druid/editor_scripts/component.lua_template', "./build/component.lua_template")
 				return {
 					{
 						action = "shell",
 						command = {
-							"bash",
+							"d:/tool/git/bin/bash",
 							"./build/run_python_script_on_gui.sh",
 							"./build/create_druid_component.py",
 							"." .. editor.get(file, "path")
